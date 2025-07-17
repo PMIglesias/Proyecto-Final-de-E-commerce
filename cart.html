@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Revisa y gestiona los productos en tu carrito de compras.">
+    <meta name="keywords" content="tienda online, carrito, compras">
+    <meta name="author" content="Tu Nombre">
+    <title>Carrito - Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tienda Online</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="cart.html" aria-current="page">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cart">
+            <h2>Tu Carrito</h2>
+            <div id="cart-items" class="product-container"></div>
+            <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+        </section>
+    </main>
+
+    <footer class="sticky-footer">
+        <p>© 2025 Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

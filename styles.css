@@ -1,0 +1,296 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    font-size: 18px; /* Tamaño de fuente grande para accesibilidad */
+    color: #333;
+    background-color: #f4f4f4;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Asegura que main ocupe el espacio disponible */
+main {
+    flex: 1 0 auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #2c3e50, #3498db); /* Degradado */
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Sección Inicio */
+#inicio {
+    position: relative; /* Contexto para el video de fondo */
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    min-height: 400px; /* Altura mínima para mostrar el video */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Debajo del contenido overlay */
+}
+
+#inicio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre toda la sección manteniendo la proporción */
+    filter: blur(5px); /* Aplica filtro de desenfoque */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el video */
+    min-width: 100%; /* Asegura que cubra el ancho */
+    min-height: 100%; /* Asegura que cubra la altura */
+    pointer-events: none; /* Desactiva eventos de ratón para evitar controles */
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 2; /* Encima del video */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para legibilidad */
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.content-overlay h2,
+.content-overlay p {
+    color: #333; /* Alto contraste para legibilidad */
+}
+
+/* Barra de Búsqueda */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.search-bar input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 300px;
+    max-width: 100%;
+}
+
+.search-bar button {
+    padding: 0.8rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.search-bar button:hover {
+    background: #2980b9;
+}
+
+/* Sección Productos (Flexbox) */
+#productos {
+    padding: 2rem;
+    background: url('assets/images/background.jpg') no-repeat center/cover;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Contexto para la imagen */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Mismo tamaño que la imagen */
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 800px;
+    height: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-card .btn {
+    display: inline-block;
+}
+
+/* Sección Contacto y Login */
+#contacto,
+#login {
+    padding: 2rem;
+    background-color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contacto form,
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contacto label,
+#login label {
+    font-weight: bold;
+}
+
+#contacto input,
+#contacto textarea,
+#login input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contacto button,
+#login button {
+    background: #3498db;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+#contacto button:hover,
+#login button:hover {
+    background: #2980b9;
+}
+
+/* Sección Reseñas (Carousel) */
+#reseñas {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.review {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 100%;
+}
+
+.stars {
+    color: #f1c40f;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: #2980b9;
+}

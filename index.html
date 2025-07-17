@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenidos a nuestra tienda online con productos destacados y reseñas de clientes.">
+    <meta name="keywords" content="tienda online, productos, e-commerce, compras">
+    <meta name="author" content="Tu Nombre">
+    <title>Inicio - Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tienda Online</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="cart.html">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="video-background">
+                <video autoplay muted loop>
+                    <source src="assets/videos/promo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content-overlay">
+                <h2>Bienvenidos a nuestra tienda</h2>
+                <p>Encuentra los mejores productos con calidad garantizada.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+            <div class="product-container" id="featured-products"></div>
+        </section>
+
+        <section id="reseñas">
+            <h2>Reseñas de Clientes</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="review">
+                        <h3>Juan Pérez</h3>
+                        <p>¡Excelente calidad! Muy recomendado.</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <h3>María López</h3>
+                        <p>Envío rápido y productos duraderos.</p>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                    <div class="review">
+                        <h3>Carlos Gómez</h3>
+                        <p>Buen servicio al cliente, volveré a comprar.</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <h3>Ana Martínez</h3>
+                        <p>Productos a buen precio, pero el envío tardó un poco.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                </div>
+                <button class="carousel-prev" aria-label="Anterior reseña">❮</button>
+                <button class="carousel-next" aria-label="Siguiente reseña">❯</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sticky-footer">
+        <p>© 2025 Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
